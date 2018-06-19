@@ -44,20 +44,30 @@ namespace Numpadcipher
 
             if (e.KeyCode == Keys.Enter)
             {
-                //if(sender)
                 int x = 0, y = 0;
-
+                //if(inputString == )
                 outputString = "=>";
                 inputString = textBox3.Text;
-                inputString.ToCharArray();
-                foreach (char c in inputString)
+                string[] inputArray = inputString.Split(' ');
+                try
                 {
-                    if(c.ToString() != " ")
-                    {   
-                       x = inputString[0];
-                       y = inputString[1];
-                       outputString += converter.Decode(x, y);
+                    foreach (string c in inputArray)
+                    {
+                        if(c.Length <= 2)
+                        {
+                            x = Int32.Parse(c.ToCharArray()[0].ToString());
+                            y = Int32.Parse(c.ToCharArray()[1].ToString());
+                            outputString += converter.Decode(x, y);
+                        }
+                        else
+                        {
+                            outputString += c + " is the wrong format";
+                        }
                     }
+                }
+                catch
+                {
+                    outputString += inputString + " failed to decode";
                 }
 
                 textBox4.AppendText(outputString + Environment.NewLine);

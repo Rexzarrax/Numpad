@@ -12,12 +12,12 @@ namespace Numpadcipher
                 { "0"," ","@","$","_" },
                 { "1","/",".",",","?" },
                 { "2","a","b","c","!" },
-                { "3","d","e","f","_" },
-                { "4","g","h","i","_" },
-                { "5","j","k","l","_" },
-                { "6","m","n","o","_" },
+                { "3","d","e","f","=" },
+                { "4","g","h","i","-" },
+                { "5","j","k","l",":" },
+                { "6","m","n","o",";" },
                 { "7","p","q","r","s" },
-                { "8","t","u","v","_" },
+                { "8","t","u","v","'" },
                 { "9","w","x","y","z" },
                 };
         public Convertholder()
@@ -43,9 +43,9 @@ namespace Numpadcipher
                 return "cannot convert:" + s;
 
             }
-            catch(Exception ex)
+            catch(Exception Ex)
             {
-               x = "(Major Fail finding:" + s+")";
+               x = "(Major Fail finding:<" + s+">)";
             }
             return x;
         }
@@ -61,4 +61,5 @@ namespace Numpadcipher
             }
         }
     }
+    //42 81 81 71 74 54 11 11 41 43 81 42 82 22 12 23 63 61 11 73 32 92 94 21 73 73 21 92 11 62 82 61 71 21 31 
 }

@@ -45,7 +45,7 @@ namespace Numpadcipher
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Check if an invalid key for input was pressed
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ' '))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -63,25 +63,23 @@ namespace Numpadcipher
                     e.Handled = true;
                 }
 
-                // Ah the curse of the broken code. Fix this if you want I can't be bothered fixing it myself
-                //
-                // // Now we can check that every set of coords is a valid length
-                // for (int i = 0; i < inputArray.Length; i++)
-                // {
+                // Now we can check that every set of coords is a valid length
+                //for (int i = 0; i < inputArray.Length; i++)
+                //{
                 //     if (inputArray[i].Length > 2) inputArray[i] = inputArray[i].Substring(0, 2); // Cut down coord pair to 2 characters if greater than 2 chars
-                // }
-                // 
-                // // If we had to modify the input to make it valid, then change the input in the textbox
+                //}
+                
+                // If we had to modify the input to make it valid, then change the input in the textbox
                 // if (inputArray != textBox3.Text.Split(' '))
-                // {
-                //     string output = inputArray[0];
-                //     for (int i = 1; i < inputArray.Length; i++)
-                //     {
+                //{
+                //    string output = inputArray[0];
+                //    for (int i = 1; i < inputArray.Length; i++)
+                //    {
                 //         output += " " + inputArray[i];
-                //     }
-                // 
-                //     textBox3.Text = output;
-                //     textBox3.SelectionStart = textBox3.Text.Length;
+                //    }
+                //
+                //   textBox3.Text = output;
+                //   textBox3.SelectionStart = textBox3.Text.Length;
                 // }
             }
         }
